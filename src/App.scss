@@ -1,0 +1,101 @@
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1280px;
+@mixin tablet {
+    @media screen and (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.link {
+    text-decoration: none;
+    color: gray;
+}
+
+ul {
+    list-style: none;
+}
+
+.bg {
+    animation: slide 5s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgba(203, 192, 211, 0.1) 50%, rgba(46, 41, 78, 0.2) 50%), linear-gradient(240deg, rgba(203, 192, 211, 0.5) 50%, rgba(27, 153, 139, 0.2) 50%), linear-gradient(120deg, rgba(129, 178, 154, 1) 50%, rgba(46, 41, 78, 0.2) 50%), linear-gradient(90deg, rgba(129, 178, 154, 1) 50%, rgba(27, 153, 139, 0.2) 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 6s;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    height: 4rem;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    @include tablet {
+        justify-content: flex-end;
+    }
+    &__link {
+        font-weight: bold;
+        color: rgba(215, 38, 61, 0.6);
+        padding-top: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        @include tablet {
+            padding-left: 0;
+            padding-right: 4rem;
+        }
+        &:hover {
+            color: rgba(27, 153, 139, 0.8);
+        }
+    }
+}
+
+.heading {
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    padding-top: 2.5rem;
+    @include tablet {
+        font-size: 2rem;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
+    }
+}
