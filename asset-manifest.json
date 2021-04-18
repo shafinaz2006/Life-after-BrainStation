@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Life-after-BrainStation/static/css/main.05bd058d.chunk.css",
+    "main.js": "/Life-after-BrainStation/static/js/main.8cdabee1.chunk.js",
+    "main.js.map": "/Life-after-BrainStation/static/js/main.8cdabee1.chunk.js.map",
+    "runtime-main.js": "/Life-after-BrainStation/static/js/runtime-main.3cd7f91a.js",
+    "runtime-main.js.map": "/Life-after-BrainStation/static/js/runtime-main.3cd7f91a.js.map",
+    "static/js/2.c2c410c4.chunk.js": "/Life-after-BrainStation/static/js/2.c2c410c4.chunk.js",
+    "static/js/2.c2c410c4.chunk.js.map": "/Life-after-BrainStation/static/js/2.c2c410c4.chunk.js.map",
+    "static/js/3.cba3584c.chunk.js": "/Life-after-BrainStation/static/js/3.cba3584c.chunk.js",
+    "static/js/3.cba3584c.chunk.js.map": "/Life-after-BrainStation/static/js/3.cba3584c.chunk.js.map",
+    "index.html": "/Life-after-BrainStation/index.html",
+    "static/css/main.05bd058d.chunk.css.map": "/Life-after-BrainStation/static/css/main.05bd058d.chunk.css.map",
+    "static/js/2.c2c410c4.chunk.js.LICENSE.txt": "/Life-after-BrainStation/static/js/2.c2c410c4.chunk.js.LICENSE.txt",
+    "static/media/Home.scss": "/Life-after-BrainStation/static/media/movies.896c90c0.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3cd7f91a.js",
+    "static/js/2.c2c410c4.chunk.js",
+    "static/css/main.05bd058d.chunk.css",
+    "static/js/main.8cdabee1.chunk.js"
+  ]
+}
