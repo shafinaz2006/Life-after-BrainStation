@@ -4,7 +4,7 @@ import Home from './Components/Home';
 import Movies from './Components/Movies';
 import Books from './Components/Books';
 // require('dotenv').config();
-import { HashRouter,BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect, Link } from "react-router-dom";
 
 function App()  {
     return (
