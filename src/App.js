@@ -9,7 +9,7 @@ import { HashRouter,BrowserRouter, Switch, Route, Redirect, Link } from "react-r
 function App()  {
     return (
         <div className='page'>
-            <BrowserRouter>
+            <HashRouter basename='/'>
                 <div className="bg"></div>
                 <div className="bg bg2"></div>
                 <div className="bg bg3"></div>
@@ -25,7 +25,7 @@ function App()  {
                     <Route path='/movies' component={Movies}/>
                     <Route path='/books' component={Books}/>
                 </Switch>
-            </BrowserRouter>
+            </HashRouter>
         </div>
     );
 }
