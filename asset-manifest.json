@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Take-a-Break/static/css/main.dd37439d.chunk.css",
-    "main.js": "/Take-a-Break/static/js/main.abb9b1a8.chunk.js",
-    "main.js.map": "/Take-a-Break/static/js/main.abb9b1a8.chunk.js.map",
+    "main.css": "/Take-a-Break/static/css/main.72c9f60c.chunk.css",
+    "main.js": "/Take-a-Break/static/js/main.20abf4e5.chunk.js",
+    "main.js.map": "/Take-a-Break/static/js/main.20abf4e5.chunk.js.map",
     "runtime-main.js": "/Take-a-Break/static/js/runtime-main.58874216.js",
     "runtime-main.js.map": "/Take-a-Break/static/js/runtime-main.58874216.js.map",
     "static/js/2.7aabf7e0.chunk.js": "/Take-a-Break/static/js/2.7aabf7e0.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.0c9edf80.chunk.js": "/Take-a-Break/static/js/3.0c9edf80.chunk.js",
     "static/js/3.0c9edf80.chunk.js.map": "/Take-a-Break/static/js/3.0c9edf80.chunk.js.map",
     "index.html": "/Take-a-Break/index.html",
-    "static/css/main.dd37439d.chunk.css.map": "/Take-a-Break/static/css/main.dd37439d.chunk.css.map",
+    "static/css/main.72c9f60c.chunk.css.map": "/Take-a-Break/static/css/main.72c9f60c.chunk.css.map",
     "static/js/2.7aabf7e0.chunk.js.LICENSE.txt": "/Take-a-Break/static/js/2.7aabf7e0.chunk.js.LICENSE.txt",
     "static/media/Home.scss": "/Take-a-Break/static/media/movies.896c90c0.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.58874216.js",
     "static/js/2.7aabf7e0.chunk.js",
-    "static/css/main.dd37439d.chunk.css",
-    "static/js/main.abb9b1a8.chunk.js"
+    "static/css/main.72c9f60c.chunk.css",
+    "static/js/main.20abf4e5.chunk.js"
   ]
 }
