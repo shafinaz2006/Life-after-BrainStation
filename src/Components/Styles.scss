@@ -1,102 +1,69 @@
 @import '../App.scss';
-.section {
-    padding-left: 1rem;
-    padding-right: 1rem;
+.content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding-top: 1.5rem;
     align-items: center;
     @include tablet {
         padding-left: 1rem;
         padding-right: 1rem;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
     }
     @include desktop {
         padding-left: 4rem;
         padding-right: 4rem;
     }
-    &__heading {
-        font-size: 1.15rem;
-        font-weight: normal;
+    @include bigScreen {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+    &__genre {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
         @include tablet {
-            font-size: 1.5rem;
+            padding-left: 0px;
+            width: 40%;
         }
     }
-    &__heading2 {
+    &__result {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 98%;
+        justify-content: center;
+        @include tablet {
+            width: 55%;
+            padding-left: 2rem;
+        }
+        &--error {
+            @include tablet {
+                padding-top: 4rem;
+            }
+        }
+    }
+    &__subHeading {
         font-weight: normal;
         padding-top: 2rem;
         color: white;
-        padding-bottom: 1.5rem;
+        padding-bottom: 2rem;
         font-size: 1.15rem;
         text-align: center;
         @include tablet {
-            font-size: 1.5rem;
-        }
-    }
-    &__titleSecond {
-        text-align: center;
-        color: white;
-        padding-top: 0.5rem;
-        padding-bottom: 1rem;
-        font-size: 1.15rem;
-        font-weight: normal;
-        @include tablet {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
         }
     }
     &__list {
-        margin-bottom: 1.5rem;
-        width: 100%;
+        flex-wrap: wrap;
     }
-    &__poster {
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
-        @include desktop {
-            object-fit: cover;
-        }
-    }
-    &__imgAndOverview {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        margin-bottom: 1rem;
-    }
-    &__overview {
-        width: 70%;
-        margin-top: 0px;
-        padding-top: 0px;
-    }
-}
-
-.wholeRegular {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-top: 1.5rem;
-    @include tablet {
-        flex-direction: row;
-    }
-}
-
-.whole-left {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 98%;
-    @include tablet {
-        padding-left: 0px;
-        width: 40%;
-        align-self: flex-start;
-    }
-}
-
-.whole-right {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    @include tablet {
-        width: 60%;
+    &__errorHeading {
+        color: white;
+        padding-left: 3rem;
+        padding-top: 2rem;
+        font-weight: normal;
     }
 }
 
@@ -107,6 +74,8 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-left: 0.6rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
     @include tablet {
         padding-left: 0px;
     }
@@ -118,9 +87,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    @include tablet {
-        padding-left: 5rem;
-    }
+    @include tablet {}
 }
 
 .item {
@@ -129,7 +96,7 @@
     height: 2rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    padding: 1.5rem;
+    padding: 2rem;
     line-height: 2rem;
     text-align: center;
     border-radius: 3px;
@@ -143,29 +110,29 @@
     }
 }
 
-.bookItem {
+.genreItem {
     font-size: 0.8rem;
     line-height: 1.2rem;
     vertical-align: center;
 }
 
-.bookItem:nth-of-type(5n + 1) {
+.genreItem:nth-of-type(5n + 1) {
     background-color: rgba(215, 38, 61, 0.8);
 }
 
-.bookItem:nth-of-type(5n + 2) {
+.genreItem:nth-of-type(5n + 2) {
     background-color: rgba(244, 96, 54, 0.8);
 }
 
-.bookItem:nth-of-type(5n + 3) {
-    background-color: rgba(46, 41, 78, 0.8);
+.genreItem:nth-of-type(5n + 3) {
+    background-color: rgba(104, 147, 238, 0.8);
 }
 
-.bookItem:nth-of-type(5n + 4) {
+.genreItem:nth-of-type(5n + 4) {
     background-color: rgba(27, 153, 139, 0.8);
 }
 
-.bookItem:nth-of-type(5n) {
+.genreItem:nth-of-type(5n) {
     background-color: rgba(197, 216, 109, 0.8);
 }
 
@@ -191,6 +158,14 @@
     }
     &:nth-of-type(5n) {
         background-color: rgba(197, 216, 109, 0.8);
+    }
+    &__poster {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        @include desktop {
+            object-fit: cover;
+        }
     }
     @include tablet {
         width: 45%;
@@ -258,10 +233,4 @@
 
 .rating {
     padding-bottom: 0.4rem;
-}
-
-.errorHeading {
-    color: white;
-    padding-left: 3rem;
-    padding-top: 2rem;
 }

@@ -54,40 +54,45 @@ class Books extends React.Component{
     }
     render(){
         return(
-            <section className='section background--book'>
-                <h2 className='section__heading2'>Choose your favourite book from NY times Best sellers book category</h2>
-                {this.state.bookCategory? 
-                    <h2 className = 'section__titleSecond'>Here are some suggestions on {this.state.bookCategory} </h2>
-                    : ''
-                }
-                <div className= {this.state.foundBookListByCategory.length? 'whole': 'wholeRegular'}>
-                    {(this.state.bookCategoryList)?
-                        <ul className= 'list whole-left'>
+            <section className='content'>
+                {(this.state.bookCategoryList)?
+                    <div className='content__genre'>
+                        <h2 className='content__subHeading'>List of New York Times book categories </h2>
+                        <ul className= 'list content__list'>
                         {this.state.bookCategoryList.map(bookCategory => 
-                            <li className='item bookItem' key={bookCategory.list_name} 
+                            <li className='item genreItem' key={bookCategory.list_name} 
                                 onClick = {(event) => this.handleBookSearchList(event, bookCategory.list_name_encoded)}
                             >
                             {bookCategory.list_name}
                             </li>)
                         }
                         </ul>
-                    : <h2>Loading..</h2>
-                    }
-                    <div className = 'whole-right'>
-                        {(this.state.foundBookListByCategory)?
-                            this.state.bookByCategoryList.length > 0? 
-                                <ul className= 'section__list listByGenre'>
-                                {
-                                    this.state.bookByCategoryList.map(book => <Book book={book} key={book.title}/>)
-                                }
-                                </ul>
-                            : <h3>Oops!!! No movie in this category. Try another one!!!</h3>
-                        : ''
-                        }
                     </div>
-                </div>
+                : <h2>Loading..</h2>
+                }
+                {this.state.foundBookListByCategory?
+                    this.state.bookByCategoryList.length > 0? 
+                    <div className='content__result'>
+                        {this.state.bookCategory? 
+                            <h2 className = 'content__subHeading'>Here are some suggestions on "{this.state.bookCategory}" </h2>
+                            : ''
+                        }
+                        <ul className= 'list listByGenre'>
+                        {
+                            this.state.bookByCategoryList.map(book => <Book book={book} key={book.title}/>)
+                        }
+                        </ul>
+                    </div>
+                    : 
+                    <div className='content__result content__result--error'>
+                        <h3 className='content__errorHeading'>Oops!!</h3>
+                        <h3 className='content__errorHeading'>No book in "{this.state.bookCategory}" category. </h3>
+                        <h3 className='content__errorHeading'>Try another one!!!</h3>
+                    </div>
+                : ''
+                }
             </section>
         )
     }
 }
-export default Books
+export default Books;

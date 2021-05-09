@@ -6,7 +6,7 @@ function Movie({movie}){
             <div className="flip-card-inner">
                 <div className="flip-card-front">
                     <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt='movie poster'
-                        className='section__poster' />
+                        className='flip-card__poster' />
                 </div>
                 <div className="flip-card-back">
                     <h3 className='flip-card-back__heading'>{movie.title}</h3>

@@ -5,7 +5,7 @@ function Book({book}){
         <section className='flip-card'>
             <div className='flip-card-inner'>
                 <div className='flip-card-front'>
-                    <img src={book.book_image} alt="book poster" className= 'section__poster'/>
+                    <img src={book.book_image} alt="book poster" className= 'flip-card__poster'/>
                 </div>
                 <div className="flip-card-back">
                     <h3 className='flip-card-back__heading'>{book.title}</h3> 

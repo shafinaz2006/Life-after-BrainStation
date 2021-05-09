@@ -3,7 +3,6 @@ import React from 'react';
 import Home from './Components/Home';
 import Movies from './Components/Movies';
 import Books from './Components/Books';
-// require('dotenv').config();
 import { HashRouter, Switch, Route, Redirect, Link } from "react-router-dom";
 
 function App()  {
@@ -18,7 +17,7 @@ function App()  {
                     <Link to='/books' className={`link nav__link `}>Books</Link>
                     <Link to='/movies' className={`link nav__link`}>Movies </Link>
                 </nav>
-                <h1 className='heading'> Life After BrainStation</h1>
+                <h1 className='heading'>Take a Break</h1>
                 <Switch>
                     <Redirect from='/home' to='/'/>
                     <Route path='/' exact component={Home}/>

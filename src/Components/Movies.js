@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './Styles.scss';
 import Movie from './Movie';
-const IMDB_API = process.env.REACT_APP_IMDB_API; 
+const IMDB_API = process.env.REACT_APP_IMDB_API;
 
 class Movies extends React.Component {
     state = {
@@ -51,7 +51,7 @@ class Movies extends React.Component {
         let movieFilter = this.state.movieList.filter(movie => movie.genre_ids.includes(genreId))
         this.setState({ movieListByGenre: movieFilter, foundMovieListByGenre: true });
         let genre = this.state.genre.find(genre => genre.id === genreId);
-        this.setState({genreName: genre.name});
+        this.setState({ genreName: genre.name });
         window.scrollTo(0, 0)
     }
     componentDidMount() {
@@ -60,37 +60,42 @@ class Movies extends React.Component {
     }
     render() {
         return (
-            <section className='section'>
-                <h2 className='section__heading2'>List of IMDB movie genres. Choose your favourite one!!</h2>
-                {this.state.genreName ?
-                    <h2 className='section__titleSecond'>Here are some suggestions on {this.state.genreName} </h2>
-                    : ''
-                }
-                <div className= 'wholeRegular'>
-                    {(this.state.genre) ?
-                        <ul className='list whole-left'>
-                            {this.state.genre.map(genre => 
-                                <li className='item bookItem' key={genre.id}
+            <section className='content'>
+                {this.state.genre?
+                    <div className='content__genre'>
+                        <h2 className='content__subHeading'>List of IMDB movie genres </h2>
+                        <ul className='list content__list'>
+                            {this.state.genre.map(genre =>
+                                <li className='item genreItem' key={genre.id}
                                     onClick={(event) => this.handleMovieSearchByGenre(event, genre.id)}>
                                     {genre.name}
                                 </li>
                             )}
                         </ul>
-                        : <h2>Loading..</h2>
-                    }
-                    <div className='whole-right'>
-                        {this.state.foundMovieListByGenre ?
-                            this.state.movieListByGenre.length > 0 ?
-                                <ul className='section__list listByGenre'>
-                                    {
-                                        this.state.movieListByGenre.map(movie => <Movie movie={movie} key={movie.id}/>)
-                                    }
-                                </ul>
-                                : <h3 className='errorHeading'>Oops!!! No movie in this category. Try another one!!!</h3>
-                            : ''
-                        }
                     </div>
-                </div>
+                    : <h2>Loading..</h2>
+                }
+                {this.state.foundMovieListByGenre ?
+                    this.state.movieListByGenre.length > 0 ?
+                        <div className='content__result'>
+                            {this.state.genreName ?
+                                <h2 className='content__subHeading'>Here are some suggestions on "{this.state.genreName}" </h2>
+                                : ''
+                            }
+                            <ul className='list listByGenre'>
+                                {this.state.movieListByGenre.map(movie =>
+                                    <Movie movie={movie} key={movie.id} />)
+                                }
+                            </ul>
+                        </div>
+                        : 
+                        <div className='content__result content__result--error'>
+                            <h3 className='content__errorHeading'>Oops!!</h3>
+                            <h3 className='content__errorHeading'>No movie in "{this.state.genreName}" category. </h3>
+                            <h3 className='content__errorHeading'>Try another one!!!</h3>
+                        </div>
+                    : ''
+                }
             </section>
         );
     }
